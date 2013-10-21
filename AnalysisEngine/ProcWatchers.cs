@@ -66,7 +66,7 @@ namespace AnalysisEngine
         {
             Timer t = (Timer)sender;
             t.Stop();
-
+            //
             if (p.ProcessName == "java")
             {
                 if (Utilities.scanProcess(p))
