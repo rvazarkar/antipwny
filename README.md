@@ -4,17 +4,22 @@ Authors: Rohan Vazarkar, David Bitner
 
 A host based IDS/IPS written in C#, targetted at Metasploit Payloads.
 
-Detects and kills the following payloads:
+Current Features
 --------
+* Scans Registry for Meterpreter Persistence/MetSvc
+* Active Memory Scans to detect Meterpreter
+* IDS/IPS Mode
+* View outbound connections in compromised processes
 
-Meterpreter
+Detected Payloads:
+--------
+* Meterpreter
+* Java Meterpreter
+* Reverse Shell
 
-Java Meterpreter
-
-Reverse Shell
-
-User Persistence
-
-System Persistence
-
-Metsvc
+Planned Features
+--------
+* Firewall Support
+* Detect Cobalt Strike Beacon
+* Network Firewall Support
+* Self Check for Integrity to catch Migration
