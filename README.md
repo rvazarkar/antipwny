@@ -23,3 +23,4 @@ Planned Features
 * Detect Cobalt Strike Beacon
 * Network Firewall Support
 * Self Check for Integrity to catch Migration
+* Fix configuration tab to actually work
