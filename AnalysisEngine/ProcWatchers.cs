@@ -50,8 +50,8 @@ namespace AnalysisEngine
                 {
                     string date = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
                     Timer t = new Timer();
-                    //It takes a bit of time for Meterpreter to properly load itself into memory. Wait 10 seconds before we scan the process
-                    t.Interval = 10000;
+                    //It takes a bit of time for Meterpreter to properly load itself into memory. Wait 7 seconds before we scan the process
+                    t.Interval = 7000;
                     t.Elapsed += (s, args) => t_Elapsed(s, args, p, date);
                     t.Start();
                 }
@@ -66,7 +66,7 @@ namespace AnalysisEngine
         {
             Timer t = (Timer)sender;
             t.Stop();
-            //
+            
             if (p.ProcessName == "java")
             {
                 if (Utilities.scanProcess(p))
