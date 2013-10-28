@@ -2,7 +2,7 @@ antipwny
 ========
 Authors: Rohan Vazarkar, David Bitner
 
-A host based IDS/IPS written in C#, targetted at Metasploit Payloads.
+A host based IDS/IPS written in C#, targeted at Metasploit Payloads.
 
 Current Features
 --------
