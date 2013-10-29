@@ -130,6 +130,10 @@
   <ItemGroup>
     <Content Include="dlls\ObjectListView.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="exe\x64\" />
+    <Folder Include="exe\x86\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
