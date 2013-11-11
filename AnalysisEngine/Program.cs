@@ -246,7 +246,10 @@ namespace AnalysisEngine
             foreach (object i in list){
                 ProcessListObject obj = i as ProcessListObject;
 
+
+                Process.EnterDebugMode();
                 Process p = Process.GetProcessById(obj.InternalID);
+
                 if (!p.HasExited)
                 {
                     try
@@ -264,6 +267,8 @@ namespace AnalysisEngine
                         MessageBox.Show("Unable to kill process " + obj.ProcessName);
                     }
                 }
+
+                Process.LeaveDebugMode();
             }
             
         }
@@ -797,7 +802,8 @@ namespace AnalysisEngine
             evtLogList.EmptyListMsg = "No Events Found";
             evtLogList.FullRowSelect = true;
             evtLogList.SetObjects(eventLogEntries);
-            evtLogList.EnsureVisible(evtLogList.Items.Count - 1);
+            if (eventLogEntries.Count > 0)
+                evtLogList.EnsureVisible(evtLogList.Items.Count - 1);
             if (eventLogEntries.Count == 0)
                 evtLogList.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
             else

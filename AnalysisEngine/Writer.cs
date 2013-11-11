@@ -60,6 +60,13 @@ namespace AnalysisEngine
             }
         }
 
+        public void write(string input)
+        {
+
+            APEventLogEntry temp = new APEventLogEntry(DateTime.Now.ToLongDateString(), input, "test");
+            RaiseLogAdded(new AddLogEventArgs(temp));
+        }
+
         public void setPath(string s)
         {
             if (writer != null)
