@@ -7,6 +7,7 @@ A host based IDS/IPS written in C#, targeted at Metasploit Payloads.
 Instructions
 --------
 AntiPwny requires .NET Framework 4.5, which can be acquired [here](http://www.microsoft.com/en-us/download/details.aspx?id=30653).
+An offline installer is available [here] (http://www.microsoft.com/en-us/download/details.aspx?id=40779)
 
 Pre-compiled binaries can be found in the exe folder in the root directory. Make sure you use the proper platform or you will get errors! The DLL file included is necessary for AntiPwny to run.
 
