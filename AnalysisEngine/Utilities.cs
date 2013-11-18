@@ -29,8 +29,8 @@ namespace AnalysisEngine
             catch (Exception) { return ""; }
         }
         #region Memory Scanner
-        static byte[] meterpreter = new byte[] { 0x73, 0x74, 0x64, 0x61, 0x70, 0x69, 0x5F, 0x73, 0x79, 0x73, 0x5F, 0x70, 0x72, 0x6F, 0x63, 0x65, 0x73, 0x73, 0x5F, 0x67, 0x65, 0x74, 0x70, 0x69, 0x64 };
-        static byte[] javameter = new byte[] { 0x6d, 0x65, 0x74, 0x61, 0x73, 0x70, 0x6c, 0x6f, 0x69, 0x74 };
+        static byte[] metxor = new byte[] { 0x8C, 0x8B, 0x9B, 0x9E, 0x8F, 0x96, 0xA0, 0x8C, 0x86, 0x8C, 0xA0, 0x8F, 0x8D, 0x90, 0x9C, 0x9A, 0x8C, 0x8C, 0xA0, 0x98, 0x9A, 0x8B, 0x8F, 0x96, 0x9B };
+        static byte[] javameter = new byte[] { 0x92, 0x9a, 0x8B, 0x9E, 0x8C, 0x8F, 0x93, 0x90, 0x96, 0x8B };
 
         [StructLayout(LayoutKind.Sequential)]
         public struct ParentProcessUtilities
@@ -109,7 +109,12 @@ namespace AnalysisEngine
                 byte[] buff = new byte[MemReg[i].RegionSize.ToInt32()];
                 ReadProcessMemory(p.Handle, MemReg[i].BaseAddress, buff, MemReg[i].RegionSize.ToInt32(), IntPtr.Zero);
 
-                long Result = IndexOf(buff, meterpreter);
+                for (int j = 0; j < buff.Length; j++)
+                {
+                    buff[j] = (byte)(buff[j] ^ 0xFF);
+                }
+
+                long Result = IndexOf(buff, metxor);
                 if (Result > 0)
                 {
                     buff = null;

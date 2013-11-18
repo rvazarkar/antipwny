@@ -482,7 +482,7 @@ namespace AnalysisEngine
                     if (!p.HasExited)
                     {
                         //Filter out ourselves as well as the Windows Defender module. Windows Defender will almost always have the signature we're looking for provided AntiPwny is running
-                        if (!p.MainModule.FileName.Contains(Path.GetFileName(System.Reflection.Assembly.GetEntryAssembly().Location)) && !p.MainModule.FileName.ToLower().Contains("msmpeng"))
+                        if (!p.MainModule.FileName.ToLower().Contains("msmpeng"))
                         {
                             //Use a different scan for Java. We still need to look for meterpreter in java as well, because it can be migrated. This will look specifically for Java Meterpreter
                             if (p.ProcessName == "java")
