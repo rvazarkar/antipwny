@@ -31,7 +31,6 @@ Planned Features
 * Firewall Support
 * Detect Cobalt Strike Beacon
 * Network Firewall Support
-* Self Check for Integrity to catch Migration
 * Fix configuration tab to actually work
 
 The ObjectListView library was used to create AntiPwny. It can be found [here] (http://objectlistview.sourceforge.net/cs/index.html)
