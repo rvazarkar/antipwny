@@ -19,6 +19,7 @@ Current Features
 * Active Memory Scans to detect Meterpreter
 * IDS/IPS Mode
 * View outbound connections in compromised processes
+* Self-Detection for Migrated Meterpreter
 
 Detected Payloads:
 --------
